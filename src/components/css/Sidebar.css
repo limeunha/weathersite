@@ -1,0 +1,16 @@
+.sidebar {
+   width: 30%;
+}
+
+.sidebar1 {
+   width: 60%;
+   margin: 0 auto;
+   text-align: center;
+   color: rgb(0, 102, 255);
+   font-size: 20px;
+   padding-bottom: 30px;
+}
+
+.sidebar_img {
+   text-align: center;
+}
