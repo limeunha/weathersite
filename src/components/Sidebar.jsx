@@ -5,7 +5,7 @@ function Sidebar() {
       <div className="sidebar">
          <div className="sidebar1">전국지도</div>
          <div className="sidebar_img">
-            <img src="./images/1.png" alt="한국 지도" width="90%" />
+            <img src="./images/1.png" alt="한국 지도" width="95%" />
          </div>
       </div>
    )
