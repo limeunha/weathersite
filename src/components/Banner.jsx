@@ -2,7 +2,6 @@ import './css/Banner.css'
 import TextField from '@mui/material/TextField'
 import CheckIcon from '@mui/icons-material/Check'
 import ToggleButton from '@mui/material/ToggleButton'
-import { blue } from '@mui/material/colors'
 
 function Banner() {
    return (
