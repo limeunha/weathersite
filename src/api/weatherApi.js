@@ -24,3 +24,14 @@ const fetchFromApi = async (url, params = {}) => {
 
 //현재날씨
 //3시간 마다 한번씩 바뀌는 5일치 날씨예보
+//지역검색 API 호출
+export const searchcity = (query, page = 1) => {
+   return fetchFromApi('/search/city', {
+      query,
+      language: 'ko-KR',
+      page,
+      region: 'KR',
+   })
+}
+
+export default weatherApi
