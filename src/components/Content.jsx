@@ -3,6 +3,7 @@ import axios from 'axios'
 import './css/Content.css'
 
 const CurrentWeather = () => {
+   //변수설정
    const [weatherData, setWeatherData] = useState(null)
    const [loading, setLoading] = useState(true)
    const [error, setError] = useState(null)
@@ -11,19 +12,25 @@ const CurrentWeather = () => {
    const city = 'Incheon'
 
    useEffect(() => {
+      //useEffect: 훅, 렌더링할때 사용
       const fetchCurrent = async () => {
-         setLoading(true)
+         //async는 비동기함수
+         setLoading(true) //로딩상태를 true지정
          try {
+            //try: 에러가 발생할 수 있는 코드
+            //axios.get:get요청을 보낼때 사용하는 구문
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=kr`)
-            setWeatherData(response.data)
+            setWeatherData(response.data) //응답데이터를 받아서 저장
          } catch (error) {
+            //error 구문
             setError('날씨 데이터를 가져오는 데 실패했습니다.')
          } finally {
+            //로딩 상태가 끝났거나 로딩이 완료된 상태
             setLoading(false)
          }
       }
 
-      fetchCurrent()
+      fetchCurrent() //함수호출
    }, [])
 
    if (loading) {

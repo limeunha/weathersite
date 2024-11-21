@@ -3,7 +3,7 @@
 }
 
 .sidebar1 {
-   width: 60%;
+   width: 60px;
    margin: 0 auto;
    text-align: center;
    color: rgb(0, 102, 255);
@@ -13,4 +13,5 @@
 
 .sidebar_img {
    text-align: center;
+   margin: 0 auto;
 }
