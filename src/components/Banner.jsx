@@ -22,7 +22,7 @@ function Banner() {
       try {
          const response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric&lang=kr`) //fetch는 요청을 보내고 응답을 기다리는 비동기함수, await를 사용해 응답을 기다린후 실행
 
-         console.log('Response:', response) //응답객체를 실행, 호출이 성공적으로 이루어졌는지 확인 유용
+         // console.log('Response:', response) //응답객체를 실행, 호출이 성공적으로 이루어졌는지 확인 유용
 
          //확인하는 속성
          if (!response.ok) {
@@ -30,14 +30,14 @@ function Banner() {
          }
 
          const data = await response.json() //json객체로 변환시키는 구문
-         console.log('Weather Data:', data) //변환시키는 구문을 data에 저장하는 구문
+         // console.log('Weather Data:', data) //변환시키는 구문을 data에 저장하는 구문
          setWeatherData(data) //상태 업데이트 함수
          setError(null) //에러상태 업데이트 함수
 
          navigate(`/weather/${data.name}`) //훅에서 반환된 페이지 이동함수
       } catch (error) {
          //catch구문은 오류발생이 났을때 실행되는 코드
-         console.error('Error:', error)
+         // console.error('Error:', error)
          setWeatherData(null)
          setError(error.message)
       }
@@ -58,7 +58,7 @@ function Banner() {
       <div
          style={{
             paddingleft: '20px',
-            width: '250%',
+            width: '150%',
             height: '300px',
             backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),url(/images/sky.png)`,
             backgroundSize: 'cover',
