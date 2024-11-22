@@ -22,7 +22,7 @@ export const ContentContainer = styled.div`
    display: flex;
    flex: 1;
    flex-direction: column;
-   margin-left: 20px; //사이드바와 콘텐츠 사이 간격
+   margin-left: 20px;
 `
 
 export const BannerWrapper = styled.div`

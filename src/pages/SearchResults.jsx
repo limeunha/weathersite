@@ -1,6 +1,7 @@
 //검색결과 화면
 import React, { useEffect, useState } from 'react' //useEffect:API 호출, 구독, 타이머 설정, 로컬 스토리지 처리 외부발생처리, useState:훅, 사용자 입력, API 응답 데이터, UI의 표시 상태 관리
 import { useParams } from 'react-router-dom' //useParams는 특정값을 추출할때 유용
+import Menu from '../components/Menu'
 
 function SearchResults() {
    const { city } = useParams() //훅, useParams가 city 를 객체형태로 변환
@@ -45,31 +46,34 @@ function SearchResults() {
 
 function Content({ weatherData, weatherIcon }) {
    return (
-      <div
-         className="weather"
-         style={{
-            color: 'rgb(0, 102, 255)',
-            textAlign: 'center',
-            justifyContent: 'center',
-            margin: '0 auto',
-            fontSize: '40px',
-         }}
-      >
-         {weatherData ? (
-            <div className="weather1">
-               <div>
-                  <img src={weatherIcon} alt="날씨 아이콘" />
+      <>
+         <Menu />
+         <div
+            className="weather"
+            style={{
+               color: 'rgb(0, 102, 255)',
+               textAlign: 'center',
+               justifyContent: 'center',
+               margin: '0 auto',
+               fontSize: '40px',
+            }}
+         >
+            {weatherData ? (
+               <div className="weather1">
+                  <div>
+                     <img src={weatherIcon} alt="날씨 아이콘" />
+                  </div>
+                  <div className="weather2">
+                     <h3>{weatherData.name}</h3>
+                     <div>날씨: {weatherData.weather[0].description}</div>
+                     <div>온도: {Math.trunc(weatherData.main.temp)}°C</div>
+                  </div>
                </div>
-               <div className="weather2">
-                  <h3>{weatherData.name}</h3>
-                  <div>날씨: {weatherData.weather[0].description}</div>
-                  <div>온도: {Math.trunc(weatherData.main.temp)}°C</div>
-               </div>
-            </div>
-         ) : (
-            <div>날씨 정보를 불러올 수 없습니다.</div>
-         )}
-      </div>
+            ) : (
+               <div>날씨 정보를 불러올 수 없습니다.</div>
+            )}
+         </div>
+      </>
    )
 }
 

@@ -2,7 +2,7 @@ header {
    text-align: center;
    display: flex;
    justify-content: center;
-   margin-top: 20px;
+   margin-top: 10px;
    margin-bottom: 100px;
 }
 
@@ -11,6 +11,7 @@ nav {
    background-color: #fff;
    height: 57px;
    z-index: 99999;
+   border-bottom: 1px dotted rgb(194, 215, 224);
 }
 
 ul {
