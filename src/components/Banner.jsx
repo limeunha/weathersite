@@ -2,6 +2,8 @@ import './css/Banner.css'
 import TextField from '@mui/material/TextField'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
 
 function Banner() {
    //변수지정
@@ -70,6 +72,9 @@ function Banner() {
             <h1 className="banner_msg">환영합니다~ 지역을 검색해주세요!</h1>
             <form className="banner_form" onSubmit={handleSubmit}>
                <TextField sx={{ backgroundColor: 'white', color: 'rgb(0, 102, 255)' }} id="fullwith" fullWidth label="지역을 영어로 입력해주세요" variant="outlined" value={city} onChange={handleCityChange} />
+               <Button variant="contained" href="#contained-buttons">
+                  검색
+               </Button>
             </form>
 
             {weatherData && (
